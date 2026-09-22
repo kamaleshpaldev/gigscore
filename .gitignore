@@ -1,0 +1,25 @@
+# Environment & Secrets (Neon DB credentials, keys)
+.env
+.env.*
+*.env
+
+# Python & Backend
+__pycache__/
+*.py[cod]
+*$py.class
+env/
+venv/
+.venv/
+*.joblib.bak
+
+# Node & Frontend
+node_modules/
+dist/
+dist-ssr/
+*.local
+
+# System & IDEs
+.DS_Store
+.idea/
+.vscode/
+Thumbs.db
