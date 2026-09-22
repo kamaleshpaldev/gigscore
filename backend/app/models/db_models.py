@@ -68,8 +68,8 @@ class ConsentRecord(Base):
         nullable=False,
     )
     consent_handle = Column(String(255), unique=True, index=True, nullable=False)
-    status = Column(String(50), default="PENDING", nullable=False)
-    agg_provider = Column(String(50), default="Setu_AA", nullable=False)
+    status = Column(String(50), default="PENDING", server_default="PENDING", nullable=False)
+    agg_provider = Column(String(50), default="Setu_AA", server_default="Setu_AA", nullable=False)
     approved_at = Column(DateTime(timezone=True), nullable=True)
     created_at = Column(
         DateTime(timezone=True),

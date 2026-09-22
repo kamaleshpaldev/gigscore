@@ -1,10 +1,10 @@
 """Database engine, connection pooling, and session management for GigScore."""
 from contextlib import contextmanager
-from typing import Generator
+from typing import Any, Dict, Generator
 import logging
 
 from sqlalchemy import create_engine
-from sqlalchemy.orm import declarative_base, sessionmaker, Session
+from sqlalchemy.orm import DeclarativeBase, sessionmaker, Session
 from app.core.config import settings
 
 logger = logging.getLogger(__name__)
@@ -25,8 +25,8 @@ DATABASE_URL = get_normalized_database_url(settings.DATABASE_URL)
 # Configure engine with connection pooling optimized for Neon PostgreSQL (serverless / PgBouncer)
 is_sqlite = DATABASE_URL.startswith("sqlite")
 
-engine_kwargs = {
-    "echo": settings.APP_ENV.lower() == "development" and False,  # set True if query logging desired
+engine_kwargs: Dict[str, Any] = {
+    "echo": False,
 }
 
 if is_sqlite:
@@ -51,7 +51,9 @@ SessionLocal = sessionmaker(
     bind=engine,
 )
 
-Base = declarative_base()
+class Base(DeclarativeBase):
+    """Base class for all SQLAlchemy ORM models."""
+    pass
 
 
 def get_db() -> Generator[Session, None, None]:
