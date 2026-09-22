@@ -1,0 +1,1 @@
+"""GigScore Backend Application Package."""
