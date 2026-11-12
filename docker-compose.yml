@@ -1,0 +1,21 @@
+services:
+  gigscore-backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: gigscore-backend
+    ports:
+      - "8000:8000"
+    environment:
+      - APP_NAME=GigScore Backend
+      - APP_ENV=production
+      - DATABASE_URL=${DATABASE_URL:-sqlite:///./gigscore.db}
+      - SCORE_CHECK_FEE_INR=30.0
+      - PROTOTYPE_DISCLAIMER=Prototype - synthetic data only. Not for real lending decisions.
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+    restart: unless-stopped
+

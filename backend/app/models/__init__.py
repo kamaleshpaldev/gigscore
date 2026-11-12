@@ -1,4 +1,16 @@
 """Database models package."""
-from app.models.db_models import Worker, ConsentRecord, ScoreAudit
+from app.models.db_models import (
+    BillingRecord,
+    ConsentRecord,
+    Lender,
+    ScoreAudit,
+    Worker,
+)
 
-__all__ = ["Worker", "ConsentRecord", "ScoreAudit"]
+__all__ = [
+    "Worker",
+    "ConsentRecord",
+    "Lender",
+    "ScoreAudit",
+    "BillingRecord",
+]

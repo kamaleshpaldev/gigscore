@@ -1,0 +1,54 @@
+{
+  "disclaimer": "Prototype - synthetic data only. Not for real lending decisions.",
+  "model_version": "xgboost-calibrated-v1.0",
+  "fallback_model_version": "rule-scorecard-v1.0",
+  "trained_at": "2026-11-12T09:00:39.567846+00:00",
+  "dataset_size": 20000,
+  "train_size": 14000,
+  "val_size": 3000,
+  "test_size": 3000,
+  "default_rate_overall": 0.1198,
+  "scale_pos_weight": 7.3482,
+  "roc_auc": 0.91,
+  "ks_statistic": 0.6813,
+  "brier_score": 0.0719,
+  "decision_threshold": 0.22,
+  "precision": 0.4306,
+  "recall": 0.7772,
+  "confusion_matrix": {
+    "tn": 2272,
+    "fp": 369,
+    "fn": 80,
+    "tp": 279
+  },
+  "calibration_curve": {
+    "mean_predicted_probability": [
+      0.005,
+      0.0052,
+      0.0071,
+      0.033,
+      0.1101,
+      0.2465,
+      0.4898
+    ],
+    "fraction_of_positives": [
+      0.0012,
+      0.0,
+      0.0027,
+      0.04,
+      0.112,
+      0.2747,
+      0.5253
+    ]
+  },
+  "feature_importance": {
+    "earnings_to_peak_ratio": 0.4746,
+    "earnings_cv": 0.2296,
+    "income_gap_months": 0.113,
+    "avg_monthly_earnings": 0.0706,
+    "avg_rating": 0.0553,
+    "earnings_trend_6m": 0.0282,
+    "platform_count": 0.0173,
+    "tenure_months": 0.0114
+  }
+}

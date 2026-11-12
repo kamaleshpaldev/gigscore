@@ -1,0 +1,105 @@
+{
+  "disclaimer": "Prototype - synthetic data only. Not for real lending decisions.",
+  "diagnostic_notice": "SYNTHETIC FAIRNESS DIAGNOSTIC ONLY: Evaluated on simulated worker profiles. Not evidence of real-world demographic fairness. Gender is strictly excluded from model features.",
+  "illustrative_approval_threshold": 650,
+  "total_evaluated_samples": 3000,
+  "overall_average_score": 832.39,
+  "overall_approval_rate": 0.9243,
+  "gender_used_as_model_feature": false,
+  "dimensions": {
+    "city_tier": {
+      "dimension": "city_tier",
+      "reference_max_approval_rate": 0.933,
+      "min_disparate_impact_ratio": 0.9735,
+      "passes_four_fifths_guideline": true,
+      "groups": [
+        {
+          "group": "Tier-1",
+          "sample_size": 1410,
+          "average_score": 833.13,
+          "approval_rate_at_650": 0.9241,
+          "disparate_impact_ratio": 0.9904
+        },
+        {
+          "group": "Tier-2",
+          "sample_size": 1045,
+          "average_score": 833.31,
+          "approval_rate_at_650": 0.933,
+          "disparate_impact_ratio": 1.0
+        },
+        {
+          "group": "Tier-3",
+          "sample_size": 545,
+          "average_score": 828.69,
+          "approval_rate_at_650": 0.9083,
+          "disparate_impact_ratio": 0.9735
+        }
+      ]
+    },
+    "platform_type": {
+      "dimension": "platform_type",
+      "reference_max_approval_rate": 0.9392,
+      "min_disparate_impact_ratio": 0.966,
+      "passes_four_fifths_guideline": true,
+      "groups": [
+        {
+          "group": "Food Delivery",
+          "sample_size": 1004,
+          "average_score": 836.02,
+          "approval_rate_at_650": 0.9392,
+          "disparate_impact_ratio": 1.0
+        },
+        {
+          "group": "Freelancing",
+          "sample_size": 507,
+          "average_score": 825.67,
+          "approval_rate_at_650": 0.9073,
+          "disparate_impact_ratio": 0.966
+        },
+        {
+          "group": "Home Services",
+          "sample_size": 522,
+          "average_score": 826.73,
+          "approval_rate_at_650": 0.91,
+          "disparate_impact_ratio": 0.9689
+        },
+        {
+          "group": "Ride Hailing",
+          "sample_size": 967,
+          "average_score": 835.18,
+          "approval_rate_at_650": 0.9255,
+          "disparate_impact_ratio": 0.9854
+        }
+      ]
+    },
+    "audit_gender": {
+      "dimension": "audit_gender",
+      "reference_max_approval_rate": 0.9275,
+      "min_disparate_impact_ratio": 0.9015,
+      "passes_four_fifths_guideline": true,
+      "groups": [
+        {
+          "group": "Female",
+          "sample_size": 623,
+          "average_score": 827.0,
+          "approval_rate_at_650": 0.9213,
+          "disparate_impact_ratio": 0.9934
+        },
+        {
+          "group": "Male",
+          "sample_size": 2316,
+          "average_score": 834.62,
+          "approval_rate_at_650": 0.9275,
+          "disparate_impact_ratio": 1.0
+        },
+        {
+          "group": "Non-Binary",
+          "sample_size": 61,
+          "average_score": 802.38,
+          "approval_rate_at_650": 0.8361,
+          "disparate_impact_ratio": 0.9015
+        }
+      ]
+    }
+  }
+}

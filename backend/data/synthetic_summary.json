@@ -1,0 +1,33 @@
+{
+  "disclaimer": "Prototype - synthetic data only. Not for real lending decisions.",
+  "n_workers": 20000,
+  "default_rate": 0.1198,
+  "persona_counts": {
+    "stable_full_time": 6438,
+    "volatile_part_time": 4709,
+    "multi_platform_hustler": 4079,
+    "new_joiner": 2783,
+    "declining_earner": 1991
+  },
+  "city_tier_counts": {
+    "Tier-1": 9483,
+    "Tier-2": 6896,
+    "Tier-3": 3621
+  },
+  "platform_type_counts": {
+    "Food Delivery": 6758,
+    "Ride Hailing": 6604,
+    "Home Services": 3322,
+    "Freelancing": 3316
+  },
+  "feature_columns": [
+    "tenure_months",
+    "avg_monthly_earnings",
+    "earnings_cv",
+    "earnings_trend_6m",
+    "income_gap_months",
+    "platform_count",
+    "avg_rating",
+    "earnings_to_peak_ratio"
+  ]
+}
